@@ -1,0 +1,28 @@
+body {
+	margin: 20px;
+	padding: 0px;
+	width: 100%;
+	font-family: sans-serif;
+	font-size: 16px;
+}
+
+.sidebar {
+	width: 30%;
+	display: inline;
+}
+
+.main {
+	width: 60%;
+	display: inline;
+	border: 1px solid grey;
+	padding: 20px;
+}
+
+.big-submit {
+	border-radius: 50%;
+	border: 1px solid grey;
+	background-color: grey;
+	width: 150px;
+	height: 150px;
+	color: white;
+}
