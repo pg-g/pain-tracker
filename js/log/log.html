@@ -1,0 +1,38 @@
+<div>
+	<h3>Log Migraine {{ timestamp | date: short }}</h3>
+			<p>Complete as much as you can to begin tracking your migraine.</p>
+			<form>
+				<label>Duration: <input class="form-control" autofocus/></label><br />
+				<label>Location: <input class="form-control" /></label><br />
+				<label>Symptoms: </label><br />
+					<!-- <div class="checkbox"> -->
+						<input type="checkbox" value="Light Sensitivity"/> Light Sensitivity<br />
+						<input type="checkbox" value="Noise Sensitivity"/> Noise Sensitivity<br />
+						<input type="checkbox" value="Motion Sensitivity"/> Motion Sensitivity<br />
+						<input type="checkbox" value="Nausea"/> Nausea<br />
+						<input type="checkbox" value="Vomiting"/> Vomiting<br />
+						<!-- <input type="checkbox" value="Cramps"/> Cramps<br /> -->
+						<input type="checkbox" value="Aura"/> Aura<br />
+						<!-- </div> -->
+				<br />
+				<label>Pain Level:</label> 
+					<p>1 3 5 8 13 21</p>
+				  <input type="range" data-show-value="true" data-hightlight="true" name="level" id="level" value="3" min="1" max="21">
+				<br />
+				<label>Treatment:</label><br />
+					<input type="checkbox" value="Drugs"/> Drugs<br />
+					<input type="checkbox" value="Sleep"/> Sleep<br />
+					<input type="checkbox" value="Darkness"/> Darkness<br />
+				<br />
+				<label>Conditions:</label><br />
+					<input type="checkbox" value="Weather Change"/> Weather Change<br />
+					<input type="checkbox" value="Stress"/> Stress<br />
+					<input type="checkbox" value="Exercise"/> Exercise<br />
+					<input type="checkbox" value="Screens"/> 
+					Screens<br />
+					<input type="checkbox" value="Crying"/> Crying<br />
+					<input type="checkbox" value="Period"/> Period<br />
+				<br />
+				<button type="submit" class="btn btn-default" ng-click="logData()">Log</button>
+			</form>
+</div>
