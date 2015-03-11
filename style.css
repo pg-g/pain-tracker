@@ -1,28 +1,45 @@
 body {
-	margin: 20px;
+	margin-top: 20px;
+	margin-bottom: 20px;
 	padding: 0px;
 	width: 100%;
 	font-family: sans-serif;
-	font-size: 16px;
+	/*font-size: 16px;*/
+	background-color: #ECF0F1;
+}
+
+h1, h2, h3, h4 {
+	margin-top: 0px;
 }
 
 .sidebar {
 	width: 30%;
 	display: inline;
+	text-align: center;
 }
 
 .main {
-	width: 60%;
+	width: 68%;
 	display: inline;
 	border: 1px solid grey;
 	padding: 20px;
+	background-color: white;
 }
 
 .big-submit {
 	border-radius: 50%;
-	border: 1px solid grey;
-	background-color: grey;
+	border: 1px solid hsl(210, 29%, 29%);
+	background-color: hsl(210, 29%, 29%);
 	width: 150px;
 	height: 150px;
 	color: white;
+	font-size: 18px;
+}
+
+label {
+	margin-top: 10px;
+}
+
+.big-submit:hover {
+	background-color: #22313F;
 }
