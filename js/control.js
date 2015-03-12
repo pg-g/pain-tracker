@@ -1,11 +1,16 @@
-var app = angular.module('migraineApp')
+var app = angular.module('migraineApp');
 
-app.controller('mainControl', function($scope){
+app.controller('mainControl', function($scope, $location){
 	$scope.timestamp = new Date();
 
-	// goes on log control
-	$scope.logData = function(migraine){
+	$scope.addEntry = function(){
+		//add a new entry
+		
+		//log a timestamp in that entry
 
-	};
+		//go to log form to add more details
+		$location.path('/log');
+	}
+
 
 });
