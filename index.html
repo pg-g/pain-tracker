@@ -11,9 +11,16 @@
 		<div class="col-xs-4 sidebar">
 			<h1>Migraine<br />Tracker</h1>
 			<button class="big-submit" ng-click="addEntry()" >Log Migraine</button>
+
+			
+			<a href="/" class="btn side-btn">Stats</a>
+
+			<a class="btn side-btn">Logout</a>
 			<br /><br />
 			<div>(Calendar)</div>
 		</div> <!-- end sidebar -->
+
+	<p style="text-align: right;">Welcome, {{ user }}! <br />Migraines are the WORST.</p>
 
 		<div class="col-xs-8 main">
 			<ng-view></ng-view>
