@@ -3,24 +3,37 @@
 <head>
 	<title>Migraine Tracker</title>
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css">
+	<link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
 	<link rel="stylesheet" type="text/css" href="style.css">
 </head>
 <body ng-controller="mainControl">
+
+	<div class="container nav">
+		<div class="row">
+			<div class="col-xs-4 sidebar">
+				<h1>Migraine<br />Tracker</h1>
+			</div>
+
+			<div class="col-xs-8 right-nav">
+				<p>Welcome, {{ user }}! 
+				<button class="btn logout"><i class="fa fa-sign-out"></i></button>
+					<br /><em>Migraines are the WORST.</em></p>
+			</div>
+		</div>
+	</div>
+	
 <div class="container">
 	<div class="row">
 		<div class="col-xs-4 sidebar">
-			<h1>Migraine<br />Tracker</h1>
 			<button class="big-submit" ng-click="addEntry()" >Log Migraine</button>
 
 			
-			<a href="/" class="btn side-btn">Stats</a>
+			<a href="/#/stats" class="btn side-btn">Stats</a>
 
-			<a class="btn side-btn">Logout</a>
 			<br /><br />
 			<div>(Calendar)</div>
 		</div> <!-- end sidebar -->
 
-	<p style="text-align: right;">Welcome, {{ user }}! <br />Migraines are the WORST.</p>
 
 		<div class="col-xs-8 main">
 			<ng-view></ng-view>
@@ -28,6 +41,9 @@
 	</div> <!-- end row -->
 
 </div> <!-- end container -->
+
+
+<footer>Hey, thanks.&nbsp; | &nbsp;2015</footer>
 
 
 <!-- Scripts -->
@@ -49,6 +65,7 @@
 
 	<!-- Local -->
 	<script type="text/javascript" src="js/app.js"></script>
+	<script type="text/javascript" src="js/envService.js"></script>
 	<script type="text/javascript" src="js/control.js"></script>
 	<script type="text/javascript" src="js/service.js"></script>
 
