@@ -36,8 +36,10 @@ footer {
 }
 
 .logout {
-	padding: 2px 2px 0px 4px;
-	background-color: hsla(360, 100%, 100%, .5);
+	padding: 2px 3px 0px 5px;
+	background-color: hsla(360, 100%, 100%, 0);
+	margin-right: 0px;
+	margin-left: 5px;
 }
 
 .logout:hover {
