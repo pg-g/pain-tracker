@@ -1,9 +1,17 @@
 var app = angular.module('migraineApp');
 
 app.controller('mainControl', function($scope, $location, envService){
+	var username;
 
-	//set logged in user
-	$scope.user = 'Paige';
+	//allow login
+	$scope.login = function(username){
+		//set logged in user
+		$scope.user = username;
+		// debugger;
+		alert('Welcome, ' + username + '!');
+		$location.path('../');
+		return username;
+	};
 
 	var sync = envService.getLog();
 	$scope.migraines = sync.$asArray();

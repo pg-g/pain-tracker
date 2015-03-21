@@ -1,6 +1,6 @@
 <div>
 	<p>Recent Migraines</p>
-	<div class="container card" ng-repeat="headache in migraines">
+	<div class=" card" ng-repeat="headache in migraines">
 		<div class="row">
 			<div class="col-xs-10">
 				<p>Date: {{ headache.timestamp }}</p>
@@ -8,7 +8,7 @@
 			</div>
 			<div class="col-xs-2 change-buttons">
 				<button class="btn card-btn update-btn" ng-click="update(headache)"><i class="fa fa-pencil"></i></button>
-				<!-- <br /> -->
+				
 				<button class="btn card-btn delete-btn" ng-click="remove(headache)"><i class="fa fa-minus-circle"></i></button>
 			</div>
 		</div>

@@ -47,6 +47,16 @@ footer {
 	color: white;
 }
 
+/* LOGIN */
+.login {
+	text-align: center;
+}
+.username {
+	display: inline-block;
+	height: 30px;
+	color: black;
+}
+
 
 /* SIDEBAR */
 .sidebar {
@@ -102,10 +112,6 @@ label {
 	margin-bottom: 15px;
 	color: hsl(210, 29%, 29%);
 	padding: 15px 0px 5px 15px;
-}
-
-.card:hover {
-	/*background-color: hsla(360, 100%, 100%, .6);*/
 }
 
 .card-btn {
