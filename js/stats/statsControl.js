@@ -1,4 +1,4 @@
-var app = angular.module('migrainApp');
+var app = angular.module('migraineApp');
 
 app.controller('statsControl', function($scope, $firebase){
 	var sync = envService.getLog();

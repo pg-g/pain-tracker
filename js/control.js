@@ -1,20 +1,28 @@
 var app = angular.module('migraineApp');
 
-app.controller('mainControl', function($scope, $location, envService){
+app.controller('mainControl', function($scope, $location, envService, migraineData){
 	var username;
 
+	for(headache in $scope.migraines){
+		if(headache.details === false){
+			$("button").addClass("orange");
+		};
+	};
+
 	//allow login
-	$scope.login = function(username){
+	$scope.login = function(user){
 		//set logged in user
-		$scope.user = username;
+		// $scope.user = username;
+		user = 'Paige';
 		// debugger;
-		alert('Welcome, ' + username + '!');
+		alert('Welcome, ' + user + '!');
 		$location.path('../');
-		return username;
+		return $scope.user;
 	};
 
 	var sync = envService.getLog();
 	$scope.migraines = sync.$asArray();
+	$scope.user = 'Paige';
 
 
 	$scope.addEntry = function(){
@@ -29,11 +37,6 @@ app.controller('mainControl', function($scope, $location, envService){
 		$scope.migraines.$add(newHeadache).then(function(data){
 			$location.path('/log/' + data.key());
 			alert("Success! " + newHeadache.timestamp);
-			var id = data.key();
-			id.$bindTo($scope, 'entry').then(function(){
-				console.log($scope.entry);
-				$scope.entry.test = true;
-			});
 		});
 	}
 
@@ -43,6 +46,8 @@ app.controller('mainControl', function($scope, $location, envService){
 	}
 
 	$scope.update = function(headache){
-		$location.path('/log');
+		$location.path('/log/' + headache);
 	}
+
+
 });

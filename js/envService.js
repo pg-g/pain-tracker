@@ -13,8 +13,10 @@ app.service('envService', function($firebase, $window){
     // 	$window.localStorage.setItem('timestamp', now);
     // };
     
-    this.getLog = function(){
+    this.getLog = function(id){
         var user = 'paige';
+        if(id)
+            return $firebase(new Firebase(firebaseUrl + user + '/' + id));
     	// return $window.localStorage.getItem('timestamp');
         return $firebase(new Firebase(firebaseUrl + user))
     };

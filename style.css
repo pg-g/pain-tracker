@@ -126,6 +126,10 @@ label {
 	text-align: right;
 }
 
+.orange{
+	background-color: orange;	
+}
+
 .card-btn:hover {
 	background-color: hsl(360, 100%, 100%);
 }

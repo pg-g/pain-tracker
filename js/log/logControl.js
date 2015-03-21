@@ -1,12 +1,23 @@
-var app = angular.module('migraineApp');
+// /var app = angular.module('migraineApp');
 
-// var firebaseObj = new Firebase('https://migraine.firebaseio.com/stats');
+app.controller('logControl', function($scope, envService, migraineData, $routeParams, $location){
+	//create properties on migraine entry object?
+	// var id = $routeParams.id;
+	// $scope.id = id;
+	// alert($scope.id);
+	var entry = migraineData.$asObject()
+	entry.$bindTo($scope, "entry");
 
-app.controller('logControl', function($scope, envService, migraineData, $routeParams){
 
+	//push object into function?
 	$scope.updateLog = function(){
-		$scope.migraines.$save($routeParams.id).then(function(){
-			console.log('Details updated.');
-		});
+		$location.path('/');
+		//update migraine data
+		// $scope.duration = id.duration;
+		// $scope.loca = id.loca;
+
+	// 	entry.$save(entryUpdate).then(function(){
+	// 		console.log('Details updated.');
+	// 	});
 	};
 });

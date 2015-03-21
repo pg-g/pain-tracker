@@ -4,36 +4,47 @@
 			<!-- <p>Here: {{ logTest }}</p> -->
 			<form>
 				<label>Duration (hours): <input class="form-control" ng-model="entry.duration" autofocus/></label><br />
-				<label>Location: <input class="form-control" ng-model="entry.location"/></label><br />
+				<label>Origin Location: </label>
+					<select class="form-control" ng-model="entry.loca">
+						<option value="Back left">Back left</option>
+						<option value="Back right">Back right</option>
+						<option value="Back middle">Back middle</option>
+						<option value="Front left">Front left</option>
+						<option value="Front right">Back right</option>
+						<option value="Behind eyes">Behind eyes</option>
+						<option value="Forehead">Forehead</option>
+					</select>
+				<br />
 				<label>Symptoms: </label><br />
 					<!-- <div class="checkbox"> -->
-						<input type="checkbox" value="Light Sensitivity"/> Light Sensitivity<br />
-						<input type="checkbox" value="Noise Sensitivity"/> Noise Sensitivity<br />
-						<input type="checkbox" value="Motion Sensitivity"/> Motion Sensitivity<br />
-						<input type="checkbox" value="Nausea"/> Nausea<br />
-						<input type="checkbox" value="Vomiting"/> Vomiting<br />
+						<input type="checkbox" value="Light Sensitivity" ng-checked="light" ng-model="entry.light"/> Light Sensitivity<br />
+						<input type="checkbox" value="Noise Sensitivity" ng-checked="noise" ng-model="entry.noise"/> Noise Sensitivity<br />
+						<input type="checkbox" value="Motion Sensitivity" ng-checked="motion" ng-model="entry.motion"/> Motion Sensitivity<br />
+						<input type="checkbox" value="Nausea" ng-checked="nausea" ng-model="entry.nausea"/> Nausea<br />
+						<input type="checkbox" value="Vomiting" ng-checked="vomiting" ng-model="entry.vomiting"/> Vomiting<br />
 						<!-- <input type="checkbox" value="Cramps"/> Cramps<br /> -->
-						<input type="checkbox" value="Aura"/> Aura<br />
+						<input type="checkbox" value="Aura" ng-checked="aura" ng-model="entry.aura"/> Aura<br />
 						<!-- </div> -->
 				<br />
 				<label>Pain Level:</label> 
 					<p>1 3 5 8 13 21</p>
-				  <input type="range" data-show-value="true" data-hightlight="true" name="level" id="level" value="3" min="1" max="21">
+				  <input type="range" data-show-value="true" data-hightlight="true" name="level" id="level" value="3" min="1" max="21" ng-model="entry.painLevel">
 				<br />
 				<label>Treatment:</label><br />
-					<input type="checkbox" value="Drugs" ng-checked="entry.drugs"/> Drugs<br />
-					<input type="checkbox" value="Sleep" ng-checked="entry.sleep"/> Sleep<br />
-					<input type="checkbox" value="Darkness" ng-model="entry.dark"/> Darkness<br />
+					<input type="checkbox" value="Drugs" ng-checked="drugs" ng-model="entry.drugs"/> Drugs<br />
+					<input type="checkbox" value="Sleep" ng-checked="sleep" ng-model="entry.sleep"/> Sleep<br />
+					<input type="checkbox" value="Darkness" ng-checked="dark" ng-checked="entry.dark"/> Darkness<br />
 				<br />
 				<label>Conditions:</label><br />
-					<input type="checkbox" value="Weather Change" ng-model="entry.weather"/> Weather Change<br />
-					<input type="checkbox" value="Stress" ng-model="entry.stress"/> Stress<br />
-					<input type="checkbox" value="Exercise" ng-model="entry.exercise"/> Exercise<br />
-					<input type="checkbox" value="Screens" ng-model="entry.screens"/> 
+					<input type="checkbox" value="Weather Change" ng-checked="weather" ng-checked="entry.weather"/> Weather Change<br />
+					<input type="checkbox" value="Stress" ng-checked="stress" ng-model="entry.stress"/> Stress<br />
+					<input type="checkbox" value="Exercise" ng-checked="motion" ng-model="entry.motion"/> Motion<br />
+					<input type="checkbox" value="Exercise" ng-checked="exercise" ng-model="entry.exercise"/> Exercise<br />
+					<input type="checkbox" value="Screens" ng-checked="screens" ng-model="entry.screens"/> 
 					Screens<br />
-					<input type="checkbox" value="Crying" ng-model="entry.crying"/> Crying<br />
-					<input type="checkbox" value="Period" ng-model="entry.period"/> Period<br />
+					<input type="checkbox" value="Crying" ng-checked="crying" ng-model="entry.crying"/> Crying<br />
+					<input type="checkbox" value="Period" ng-checked="period" ng-model="entry.period"/> Period<br />
 				<br />
-				<button type="submit" class="btn btn-default" ng-click="updateLog(entry)">Log</button>
+				<button type="submit" class="btn btn-default" ng-click="updateLog()">Done</button>
 			</form>
 </div>
