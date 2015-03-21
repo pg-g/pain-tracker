@@ -6,9 +6,14 @@ app.config(function($routeProvider){
 			templateUrl: 'js/stats/stats.html',
 			controller: 'mainControl'
 		})
-		.when('/log', {
+		.when('/log/:id', {
 			templateUrl: 'js/log/log.html',
-			controller: 'logControl'
+			controller: 'logControl',
+			resolve: {
+				migraineData: function($route, envService){
+					return envService.getLog($route.current.params.id);
+				}
+			}
 		})
 		.otherwise({
 			templateUrl: 'js/stats/stats.html'

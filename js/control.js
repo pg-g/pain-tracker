@@ -18,23 +18,23 @@ app.controller('mainControl', function($scope, $location, envService){
 		newHeadache.details = 'false';
 
 		//add a new entry
-		$scope.migraines.$add(newHeadache);
-		
-		//alert success
-		alert('Migraine logged at ' + newHeadache.timestamp);
-
-		//go to log form to add more details
-		$location.path('/log');
+		$scope.migraines.$add(newHeadache).then(function(data){
+			$location.path('/log/' + data.key());
+			alert("Success! " + newHeadache.timestamp);
+			var id = data.key();
+			id.$bindTo($scope, 'entry').then(function(){
+				console.log($scope.entry);
+				$scope.entry.test = true;
+			});
+		});
 	}
 
 	$scope.remove = function(headache) {
-		alert('Entry deleted!');
+		// alert('Entry deleted!');
 		$scope.migraines.$remove(headache);
 	}
 
 	$scope.update = function(headache){
 		$location.path('/log');
 	}
-
-
 });

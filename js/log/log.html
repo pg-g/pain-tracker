@@ -3,8 +3,8 @@
 			<p>Complete as much as you can to begin tracking your migraine.</p>
 			<!-- <p>Here: {{ logTest }}</p> -->
 			<form>
-				<label>Duration: <input class="form-control" autofocus/></label><br />
-				<label>Location: <input class="form-control" /></label><br />
+				<label>Duration (hours): <input class="form-control" ng-model="entry.duration" autofocus/></label><br />
+				<label>Location: <input class="form-control" ng-model="entry.location"/></label><br />
 				<label>Symptoms: </label><br />
 					<!-- <div class="checkbox"> -->
 						<input type="checkbox" value="Light Sensitivity"/> Light Sensitivity<br />
@@ -21,19 +21,19 @@
 				  <input type="range" data-show-value="true" data-hightlight="true" name="level" id="level" value="3" min="1" max="21">
 				<br />
 				<label>Treatment:</label><br />
-					<input type="checkbox" value="Drugs"/> Drugs<br />
-					<input type="checkbox" value="Sleep"/> Sleep<br />
-					<input type="checkbox" value="Darkness"/> Darkness<br />
+					<input type="checkbox" value="Drugs" ng-checked="entry.drugs"/> Drugs<br />
+					<input type="checkbox" value="Sleep" ng-checked="entry.sleep"/> Sleep<br />
+					<input type="checkbox" value="Darkness" ng-model="entry.dark"/> Darkness<br />
 				<br />
 				<label>Conditions:</label><br />
-					<input type="checkbox" value="Weather Change"/> Weather Change<br />
-					<input type="checkbox" value="Stress"/> Stress<br />
-					<input type="checkbox" value="Exercise"/> Exercise<br />
-					<input type="checkbox" value="Screens"/> 
+					<input type="checkbox" value="Weather Change" ng-model="entry.weather"/> Weather Change<br />
+					<input type="checkbox" value="Stress" ng-model="entry.stress"/> Stress<br />
+					<input type="checkbox" value="Exercise" ng-model="entry.exercise"/> Exercise<br />
+					<input type="checkbox" value="Screens" ng-model="entry.screens"/> 
 					Screens<br />
-					<input type="checkbox" value="Crying"/> Crying<br />
-					<input type="checkbox" value="Period"/> Period<br />
+					<input type="checkbox" value="Crying" ng-model="entry.crying"/> Crying<br />
+					<input type="checkbox" value="Period" ng-model="entry.period"/> Period<br />
 				<br />
-				<button type="submit" class="btn btn-default" ng-click="updateLog()">Log</button>
+				<button type="submit" class="btn btn-default" ng-click="updateLog(entry)">Log</button>
 			</form>
 </div>
