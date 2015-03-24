@@ -1,13 +1,16 @@
 var app = angular.module('migraineApp');
 
-app.controller('mainControl', function($scope, $location, envService, migraineData){
+app.controller('mainControl', function($scope, $location, envService){
 	var username;
 
-	for(headache in $scope.migraines){
-		if(headache.details === false){
-			$("button").addClass("orange");
+	var orange = function(){
+		for(headache in $scope.migraines){
+			if(headache.details === false){
+				$("#update").addClass("orange");
+			};
 		};
-	};
+	}
+	orange();
 
 	//allow login
 	$scope.login = function(user){

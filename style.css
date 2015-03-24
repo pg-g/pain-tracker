@@ -114,6 +114,10 @@ label {
 	padding: 15px 0px 5px 15px;
 }
 
+.card i {
+	font-size: 20px;
+}
+
 .card-btn {
 	display: block;
 	margin-bottom: 5px;

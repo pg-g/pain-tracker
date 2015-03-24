@@ -22,11 +22,10 @@ app.config(function($routeProvider){
 
 
 // TO DO
-// map form to ind headache to update data in firebase
-// create threads to stats.html based on user
-// trick out form
-// ability to login/out
 // data visualization
+// trick out form
+// create threads to stats.html based on user
+// ability to login/out
 
 // d3.js
 // chart.js
