@@ -15,6 +15,7 @@ body {
 	background-size: cover;
 	color: #365A68;
 	height: 100%;
+	font-size: 16px;
 
 }
 
@@ -25,9 +26,8 @@ h1, h2, h3, h4 {
 
 footer {
 	text-align: center;
-	margin-top: 40px;
 	font-size: 13px;
-	background-color: hsla(210, 29%, 29%, .5);
+	background-color: #365A68;
 	color: white;
 	padding: 20px 0px;
 	position: relative;
@@ -44,12 +44,16 @@ footer {
 	padding: 10px inherit;
 	text-align: center;
 	margin-bottom: 0px;
-	width: 30%;
+	/*width: 30%;*/
+	min-width: 220px;
+	max-width: 220px;
 }
 
 .nav p {
 	float: right;
 	font-size: 20px;
+	margin-top: 30px;
+	margin-right: 30px;
 }
 
 .right-nav {
@@ -58,8 +62,9 @@ footer {
 }
 
 .logout {
-	padding: 2px 3px 0px 5px;
-	background-color: hsla(360, 100%, 100%, 0);
+	padding: 2px 5px 1px 6px;
+	background-color: hsla(210, 29%, 29%, .1);
+	/*background-color: hsla(360, 100%, 100%, 0);*/
 	margin-right: 0px;
 	margin-left: 5px;
 }
@@ -80,10 +85,23 @@ footer {
   position:relative;
   overflow-y:auto;
   overflow-x:hidden;
+
 }
+
+.sidebar {
+	width: 30%;
+	display: inline;
+	text-align: center;
+	background-color: #365A68;
+	padding: 0px;
+	height: 100%;
+}
+
 .navbar {
 	margin-bottom: 0px;
+	border: 0;
 }
+
 #main {
   height:100%;
   overflow:auto;
@@ -117,33 +135,14 @@ footer {
 }
 
 
-/* LOGIN */
-.login {
-	text-align: center;
-}
-.username {
-	display: inline-block;
-	height: 30px;
-	color: black;
-}
-
-
 /* SIDEBAR */
-.sidebar {
-	width: 30%;
-	display: inline;
-	text-align: center;
-	background-color: #365A68;
-	padding: 0px;
-	height: 100%;
-}
 
 .big-submit {
 	/*border-radius: 50%;*/
 	border: 1px solid hsla(210, 29%, 29%, .1);
 	background-color: hsla(210, 29%, 29%, .5);
 	width: 100%;
-	padding: 15px inherit;
+	padding: 30px inherit;
 	/*height: 150px;*/
 	color: white;
 	/*font-size: 18px;*/
@@ -154,7 +153,7 @@ footer {
 	border-radius: 0;
 	width: 100%;
 	/*margin-top: 10px;*/
-	padding: 10px 30px;
+	padding: 15px 30px;
 	color: #22313F;
 	text-transform: uppercase;
 	font-size: 12px;
@@ -172,9 +171,19 @@ label {
 }
 
 .calendar {
+	height: 900px;
+}
+/* ---------------- LOGIN ---------------- */
+.login {
+	text-align: center;
+	margin-top: 10%;
+	width: 70%;
 }
 
-/* MIDDLE DEFAULT */
+
+
+
+/* ---------------- MIDDLE DEFAULT ---------------- */
 .main-right {
 	width: 68%;
 	display: inline;
@@ -184,7 +193,7 @@ label {
 }
 
 
-/* Stats  */
+/* ---------------- Stats ---------------- */
 .statsNav button {
 	float: right;
 	margin-right: 10px;
@@ -204,12 +213,12 @@ label {
 	width: 100%;
 	color: white;
 	padding: 0px;
-	height: 26px;
+	height: 32px;
 }
 
 .section {
 	float: left;
-	padding: 3px 8px;
+	padding: 5px 8px;
 }
 
 .sectionR {
@@ -225,19 +234,22 @@ label {
 }
 
 .cardMain {
-	padding: 2px 10px;
+	padding: 5px 10px;
 }
 
 .num {
 	font-size: 45px;
 	margin-bottom: 0px;
 	padding-bottom: 0px;
+	letter-spacing: -4.99px;
+	text-align: center;
 }
 
 .numLabel {
 	font-size: 15px;
 	margin-top: 0px;
 	padding-top: 0px;
+	text-align: center;
 }
 
 
@@ -247,7 +259,7 @@ label {
 }
 
 .cardSymptoms, .cardTreatment, .cardConditions {
-	padding: 9px 5px 1px 10px;
+	padding: 11px 5px 1px 10px;
 	margin-top: 0px;
 	margin-bottom: 0px;
 	text-transform: uppercase;
@@ -258,7 +270,7 @@ label {
 	/*margin-bottom: 5px;*/
 	margin: 0px;
 	font-size: 12px;
-	padding: 3px 7px;
+	padding: 6.5px 10px;
 	background-color: hsla(360, 100%, 100%, .5);
 	border-radius: 0;
 	float: right;
@@ -329,4 +341,8 @@ label {
 .active {
 	color: #365A68 !important;
 	/*color: red;*/
+}
+
+.inactive {
+	color: hsla(197, 32%, 31%, .1);
 }

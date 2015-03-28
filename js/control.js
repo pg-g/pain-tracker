@@ -16,11 +16,11 @@ app.controller('mainControl', function($scope, $location, envService){
 	$scope.login = function(user){
 		//set logged in user
 		// $scope.user = username;
-		user = 'Paige';
+		$scope.user = user;
 		// debugger;
-		alert('Welcome, ' + user + '!');
-		$location.path('../');
-		return $scope.user;
+		// alert('Welcome, ' + user + '!');
+		$location.path('../#/stats');
+		// return $scope.user;
 	};
 
 	var sync = envService.getLog();
@@ -39,7 +39,7 @@ app.controller('mainControl', function($scope, $location, envService){
 		//add a new entry
 		$scope.migraines.$add(newHeadache).then(function(data){
 			$location.path('/log/' + data.key());
-			alert("Success!");
+			// alert("Success!");
 		});
 	}
 

@@ -50,14 +50,17 @@
 						</div>
 						<div class="col-xs-2">
 							<p class="num" ng-show="headache.duration">{{ headache.duration }}</p>
+							<p class="num inactive" ng-show="!headache.duration">0</p>
 							<p class="numLabel">pain</p>
 						</div>
 						<div class="col-xs-2">
 							<p class="num" ng-show="headache.duration">{{ headache.duration }}</p>
+							<p class="num inactive" ng-show="!headache.duration">0</p>
 							<p class="numLabel">hours</p>
 						</div>
 					</div>
 				</div>
+				<!--  -->
 				<div class="cardSymptoms color2">
 					<p>Symptoms: 
 						<i class="fa fa-sun-o" title="Light Sensitivity" ng-class="{active: headache.light === true}" ></i>
@@ -74,7 +77,7 @@
 						<i class="fa fa-cloud" title="Weather Change" ng-class="{active: headache.weather === true}"></i>
 						<i class="fa fa-frown-o" title="Stress" ng-class="{active: headache.stress === true}"></i>
 						<i class="fa fa-coffee" title="Dehydration" ng-class="{active: headache.dehydration === true}"></i>
-						<i class="fa fa-car" title="Motion (Car rides, etc.)" ng-class="{active: headache.motion === true}"></i>
+						<i class="fa fa-car" title="Motion (Car rides, etc.)" ng-class="{active: headache.motionsick === true}"></i>
 						<i class="fa fa-user" title="Exercise" ng-class="{active: headache.exercise === true}"></i>
 						<i class="fa fa-spoon" title="Breakfast" ng-class="{active: headache.breakfast === true}"></i>
 						<i class="fa fa-desktop" title="Screens" ng-class="{active: headache.screens === true}"></i>

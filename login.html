@@ -7,11 +7,12 @@
 </head>
 <body ng-controller="mainControl">
 
-	<div class="login">
+	<div class="login container">
 				<h1>Migraine<br />Tracker</h1>
-		<form>
-			<input type="text" class="username" ng-model="username" autofocus></input>
-			<button class="btn btn-default" ng-click="login(username)">Login</button>
+		<form class="form-signin">
+			<input type="text" id="inputUsername" class="form-control" placeholder="Username" required="" ng-model="username" autofocus></input>
+			<!-- <input type="password" id="inputPassword" class="form-control" placeholder="Password" required=""> -->
+			<button class="btn btn-lg btn-primary btn-block" ng-click="login(username)">Login</button>
 		</form>
 	</div>
 
