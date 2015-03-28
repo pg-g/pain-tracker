@@ -69,6 +69,54 @@ footer {
 	color: white;
 }
 
+/* ---------------- SIDEBAR ---------------- */
+#sidebar {
+  width: inherit;
+  min-width: 220px;
+  max-width: 220px;
+  background-color:#365A68;
+  float: left;
+  height:100%;
+  position:relative;
+  overflow-y:auto;
+  overflow-x:hidden;
+}
+.navbar {
+	margin-bottom: 0px;
+}
+#main {
+  height:100%;
+  overflow:auto;
+  padding: 20px;
+  background-color: #F2F2F2;
+}
+
+/* * off Canvas sidebar */
+@media screen and (max-width: 768px) {
+  .row-offcanvas {
+    position: relative;
+    -webkit-transition: all 0.25s ease-out;
+    -moz-transition: all 0.25s ease-out;
+    transition: all 0.25s ease-out;
+    width:calc(100% + 220px);
+  }
+    
+  .row-offcanvas-left
+  {
+    left: -220px;
+  }
+
+  .row-offcanvas-left.active {
+    left: 0;
+  }
+
+  .sidebar-offcanvas {
+    position: absolute;
+    top: 0;
+  }
+}
+
+
 /* LOGIN */
 .login {
 	text-align: center;
@@ -127,7 +175,7 @@ label {
 }
 
 /* MIDDLE DEFAULT */
-.main {
+.main-right {
 	width: 68%;
 	display: inline;
 	/*border: 1px solid grey;*/
@@ -137,6 +185,11 @@ label {
 
 
 /* Stats  */
+.statsNav button {
+	float: right;
+	margin-right: 10px;
+}
+
 .card {
 	/*background-color: hsla(360, 100%, 100%, .3);*/
 	background-color: white;
@@ -147,15 +200,16 @@ label {
 }
 
 .cardTop {
-	/*background-color: #365A68;*/
+	background-color: #365A68;
 	width: 100%;
 	color: white;
 	padding: 0px;
-	height: 35px;
+	height: 26px;
 }
 
 .section {
 	float: left;
+	padding: 3px 8px;
 }
 
 .sectionR {
@@ -203,8 +257,8 @@ label {
 	/*display: block;*/
 	/*margin-bottom: 5px;*/
 	margin: 0px;
-	font-size: 10px;
-	padding: 3px 5px;
+	font-size: 12px;
+	padding: 3px 7px;
 	background-color: hsla(360, 100%, 100%, .5);
 	border-radius: 0;
 	float: right;

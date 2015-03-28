@@ -2,37 +2,41 @@
 <html ng-app="migraineApp">
 <head>
 	<title>Migraine Tracker</title>
-	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css">
+	<!-- <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css"> -->
+	<link rel="stylesheet" href="bootstrap/css/bootstrap.min.css">
+	<link rel="stylesheet" href="bootstrap/css/bootstrap.css">
 	<link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
 	<link rel="stylesheet" type="text/css" href="style.css">
 	<link href='http://fonts.googleapis.com/css?family=Roboto:400,900,100' rel='stylesheet' type='text/css'>
 </head>
 <body ng-controller="mainControl">
 
-	<div class="nav">
+	<div class="nav navbar navbar-fluid">
 				<h1 class="color8">LOSE YOUR<br />MIGRAINE</h1>
 				<p>Welcome, {{ user }}! <button class="btn logout"><i class="fa fa-sign-out"></i></button></p>
 	</div>
-	
-<!-- <div class="container"> -->
-	<div class="row">
-		<div class="col-xs-3 sidebar">
-			<button class="big-submit" ng-click="addEntry()" >+ Add Migraine</button>
 
-			
-			<a href="/#/stats" class="btn side-btn">View Stats</a>
+	<div id="sidebar" class="sidebar-offcanvas">
+		<div class="col-md-12">
+				<div class="sidebar">
+					<button class="big-submit" ng-click="addEntry()" >+ Add Migraine</button>
 
-			<br /><br />
-			<div class="calendar">(Calendar)</div>
-		</div> <!-- end sidebar -->
+					
+					<a href="/#/stats" class="btn side-btn">View Stats</a>
 
+					<br /><br />
+					<div class="calendar">(Calendar)</div>
+				</div> <!-- end sidebar -->
 
-		<div class="col-xs-9 main">
+			</div>
+		</div>
+	</div>
+
+	<div id="main">
+		<div class="col-md-12">
 			<ng-view></ng-view>
-		</div> <!-- end main -->
-	</div> <!-- end row -->
-
-<!-- </div> end container -->
+		</div>
+	</div>
 
 
 <footer>Hey, thanks.&nbsp; | &nbsp;2015</footer>
