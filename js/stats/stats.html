@@ -1,47 +1,98 @@
 <div>
-	<p>Recent Migraines</p>
-	<button class="btn btn-default" onclick="location.href = '/';">Stats</button>
-	<button class="btn btn-default" onclick="location.href = '/log';">Totals</button>
-	<button class="btn btn-default">Triggers</button>
-	<br /><br />
-	<div class="card" ng-repeat="headache in migraines">
+	<div class="statsNav">
 		<div class="row">
-			<div class="col-xs-10">
-				<p>Details = {{ headache.details }}</p>
-				<p>Date: {{ headache.timestamp }}</p>
-				<p>Duration: {{ headache.duration }}</p>
-				<p>Location: {{ headache.loca }}</p>
-				<p>Pain Level: {{ headache.loca }}</p>
-				<p>Symptoms: 
-					<i class="fa fa-sun-o" title="Light Sensitivity" ng-show="headache.light === true"></i>
-					<i class="fa fa-volume-up" title="Noise Sensitivity" ng-show="headache.noise === true"></i>
-					<i class="fa fa-train" title="Motion Sensitivity" ng-show="headache.motion === true"></i>
-					<i class="fa fa-meh-o" title="Nauseau" ng-show="headache.nausea === true"></i>
-					<i class="fa fa-user-md" title="Vomiting" ng-show="headache.vomit === true"></i>
-					<i class="fa fa-female" title="Cramps" ng-show="headache.cramps === true"></i>
-					<i class="fa fa-lightbulb-o" title="Aura" ng-show="headache.aura === true"></i>
-				</p>
-				<p>Treatment:
-					<i class="fa fa-medkit" title="Took Drugs" ng-show="headache.drugs === true"></i>
-					<i class="fa fa-bed" title="Sleep" ng-show="headache.sleep === true"></i>
-					<i class="fa fa-moon-o" title="Darkness" ng-show="headache.dark === true"></i>
-					<i class="fa fa-food" title="Eating" ng-show="headache.eat === true"></i>
-				</p>
-				<p>Conditions:
-					<i class="fa fa-cloud" title="Weather Change" ng-show="headache.weather === true"></i>
-					<i class="fa fa-frown-o" title="Stress" ng-show="headache.stress === true"></i>
-					<i class="fa fa-car" title="Motion (Car rides, etc.)" ng-show="headache.motion === true"></i>
-					<i class="fa fa-" title="Exercise" ng-show="headache.exercise === true"></i>
-					<i class="fa fa-desktop" title="Screens" ng-show="headache.screens === true"></i>
-					<i class="fa fa-tint" title="Crying"  ng-show="headache.crying === true"></i>
-					<i class="fa fa-venus" title="Period" ng-show="headache.period === true"></i>
-				</p>
+			<div class="col-xs-6">
+				<p>Recent Migraines</p>
+				<select>
+					<option value="" disabled="disabled" selected="selected">Filter By</option>
+					<option value="" ng-model="view.date">Date</option>
+					<option value="" ng-model="view.pain">Pain</option>
+					<!-- <option value="" ng-model="view.loca">Location</option> -->
+				<select>
 			</div>
-			<div class="col-xs-2 change-buttons">
-				<button id="update" class="btn card-btn update-btn" ng-click="update(headache.$id)"><i class="fa fa-pencil"></i></button>
-				
-				<button class="btn card-btn delete-btn" ng-click="remove(headache)"><i class="fa fa-minus-circle"></i></button>
+			<div class="col-xs-6">
+				<button class="btn btn-default" onclick="location.href = '/';">Stats</button>
+				<button class="btn btn-default" onclick="location.href = '/';">Totals</button>
+				<button class="btn btn-default">Triggers</button>
 			</div>
+		</div>
+	</div>
+	<br /><br />
+	<div class="card" ng-repeat="headache in migraines | orderBy : view">
+		<div class="row">
+			<div class="col-xs-12">
+				<!-- <p>Details = {{ headache.details }}</p> -->
+				<div class="cardTop">
+					<div class="section datestamp primary">
+						<p>Logged {{ headache.timestamp | date : short }}</p>
+					</div>
+					<div class="section timeTime color8">
+						<p><i class="fa fa-clock-o"></i> {{ headache.timestamp | date : shortTime }}</p>
+					</div>
+					<div class="sectionR editBtn color7">
+						<button class="btn card-btn update-btn" ng-click="remove(headache)"><i class="fa fa-minus-circle"></i></button>
+					</div>
+					<div class="sectionR deleteBtn color6">
+						<button id="update" class="btn card-btn update-btn" ng-class="{orange: headache.details === false}" ng-click="update(headache.$id)"><i class="fa fa-pencil"></i></button>
+					</div>
+				</div>
+				<!-- <div class="cardTop">
+					<p>Logged {{ headache.timestamp | date : short }}</p>
+					<p><i class="fa fa-clock-o"></i> {{ headache.timestamp | date : shortTime }}</p>
+					<button class="btn card-btn update-btn" ng-click="remove(headache)"><i class="fa fa-minus-circle"></i></button>
+					<button id="update" class="btn card-btn update-btn" ng-class="{orange: headache.details === false}" ng-click="update(headache.$id)"><i class="fa fa-pencil"></i></button>
+				</div> -->
+				<div class="cardMain">
+					<div class="row">
+						<div class="col-xs-8">
+							<h1><i class="fa fa-user"></i></h1>
+							<p>{{ headache.loca }}</p>
+						</div>
+						<div class="col-xs-2">
+							<p class="num" ng-show="headache.duration">{{ headache.duration }}</p>
+							<p class="numLabel">pain</p>
+						</div>
+						<div class="col-xs-2">
+							<p class="num" ng-show="headache.duration">{{ headache.duration }}</p>
+							<p class="numLabel">hours</p>
+						</div>
+					</div>
+				</div>
+				<div class="cardSymptoms color2">
+					<p>Symptoms: 
+						<i class="fa fa-sun-o" title="Light Sensitivity" ng-class="{active: headache.light === true}" ></i>
+						<i class="fa fa-volume-up" title="Noise Sensitivity" ng-class="{active: headache.noise === true}" ></i>
+						<i class="fa fa-train" title="Motion Sensitivity" ng-class="{active: headache.motion === true}"></i>
+						<i class="fa fa-meh-o" title="Nauseau" ng-class="{active: headache.nausea === true}"></i>
+						<i class="fa fa-user-md" title="Vomiting" ng-class="{active: headache.vomit === true}"></i>
+						<i class="fa fa-female" title="Cramps" ng-class="{active: headache.cramps === true}"></i>
+						<i class="fa fa-lightbulb-o" title="Aura" ng-class="{active: headache.aura === true}"></i>
+					</p>
+				</div>
+				<div class="cardConditions color25">
+					<p>Conditions:
+						<i class="fa fa-cloud" title="Weather Change" ng-class="{active: headache.weather === true}"></i>
+						<i class="fa fa-frown-o" title="Stress" ng-class="{active: headache.stress === true}"></i>
+						<i class="fa fa-coffee" title="Dehydration" ng-class="{active: headache.dehydration === true}"></i>
+						<i class="fa fa-car" title="Motion (Car rides, etc.)" ng-class="{active: headache.motion === true}"></i>
+						<i class="fa fa-user" title="Exercise" ng-class="{active: headache.exercise === true}"></i>
+						<i class="fa fa-spoon" title="Breakfast" ng-class="{active: headache.breakfast === true}"></i>
+						<i class="fa fa-desktop" title="Screens" ng-class="{active: headache.screens === true}"></i>
+						<i class="fa fa-tint" title="Crying"  ng-class="{active: headache.crying === true}"></i>
+						<i class="fa fa-venus" title="Period" ng-class="{active: headache.period === true}"></i>
+					</p>
+				</div>
+				<div class="cardTreatment color3">
+					<p>Treatment:
+						<i class="fa fa-medkit" title="Took Drugs" ng-class="{active: headache.drugs === true}"></i>
+						<i class="fa fa-bed" title="Sleep" ng-class="{active: headache.sleep === true}"></i>
+						<i class="fa fa-moon-o" title="Darkness" ng-class="{active: headache.dark === true}"></i>
+						<i class="fa fa-food" title="Eating" ng-class="{active: headache.eat === true}"></i>
+					</p>
+				</div>
+			</div>
+			<!-- <div class="col-xs-2 change-buttons"> -->
+			<!-- </div> -->
 		</div>
 	</div>
 </div>

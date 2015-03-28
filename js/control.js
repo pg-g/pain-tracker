@@ -33,13 +33,13 @@ app.controller('mainControl', function($scope, $location, envService){
 		var newHeadache = {};
 		
 		//log a timestamp in that entry
-		newHeadache.timestamp = Date();
-		newHeadache.details = 'false';
+		newHeadache.timestamp = Date.now();
+		newHeadache.details = false;
 
 		//add a new entry
 		$scope.migraines.$add(newHeadache).then(function(data){
 			$location.path('/log/' + data.key());
-			alert("Success! " + newHeadache.timestamp);
+			alert("Success!");
 		});
 	}
 

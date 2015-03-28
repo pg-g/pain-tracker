@@ -5,43 +5,34 @@
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css">
 	<link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
 	<link rel="stylesheet" type="text/css" href="style.css">
-	<link rel="stylesheet" href="animate.css">
+	<link href='http://fonts.googleapis.com/css?family=Roboto:400,900,100' rel='stylesheet' type='text/css'>
 </head>
 <body ng-controller="mainControl">
 
-	<div class="container nav">
-		<div class="row">
-			<div class="col-xs-4 sidebar">
-				<h1>Migraine<br />Tracker</h1>
-			</div>
-
-			<div class="col-xs-8 right-nav">
-				<p>Welcome, {{ user }}! 
-				<button class="btn logout"><i class="fa fa-sign-out"></i></button>
-					<br /><em>Migraines are the WORST.</em></p>
-			</div>
-		</div>
+	<div class="nav">
+				<h1 class="color8">LOSE YOUR<br />MIGRAINE</h1>
+				<p>Welcome, {{ user }}! <button class="btn logout"><i class="fa fa-sign-out"></i></button></p>
 	</div>
 	
-<div class="container">
+<!-- <div class="container"> -->
 	<div class="row">
-		<div class="col-xs-4 sidebar">
-			<button class="big-submit" ng-click="addEntry()" >Log Migraine</button>
+		<div class="col-xs-3 sidebar">
+			<button class="big-submit" ng-click="addEntry()" >+ Add Migraine</button>
 
 			
-			<a href="/#/stats" class="btn side-btn">Stats</a>
+			<a href="/#/stats" class="btn side-btn">View Stats</a>
 
 			<br /><br />
-			<div>(Calendar)</div>
+			<div class="calendar">(Calendar)</div>
 		</div> <!-- end sidebar -->
 
 
-		<div class="col-xs-8 main">
+		<div class="col-xs-9 main">
 			<ng-view></ng-view>
 		</div> <!-- end main -->
 	</div> <!-- end row -->
 
-</div> <!-- end container -->
+<!-- </div> end container -->
 
 
 <footer>Hey, thanks.&nbsp; | &nbsp;2015</footer>

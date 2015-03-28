@@ -22,9 +22,9 @@ app.config(function($routeProvider){
 
 
 // TO DO
+// create threads to stats.html based on user
 // data visualization
 // trick out form
-// create threads to stats.html based on user
 // ability to login/out
 
 // d3.js
