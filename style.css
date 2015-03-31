@@ -47,6 +47,7 @@ footer {
 	/*width: 30%;*/
 	min-width: 220px;
 	max-width: 220px;
+	position: fixed;
 }
 
 .nav p {
@@ -85,6 +86,7 @@ footer {
   position:relative;
   overflow-y:auto;
   overflow-x:hidden;
+  position: fixed;
 
 }
 
@@ -100,6 +102,7 @@ footer {
 .navbar {
 	margin-bottom: 0px;
 	border: 0;
+	height: 94px;
 }
 
 #main {
@@ -107,6 +110,7 @@ footer {
   overflow:auto;
   padding: 20px;
   background-color: #F2F2F2;
+  margin-left: 220px;
 }
 
 /* * off Canvas sidebar */
@@ -171,7 +175,7 @@ label {
 }
 
 .calendar {
-	height: 900px;
+	/*height: 900px;*/
 }
 /* ---------------- LOGIN ---------------- */
 .login {
@@ -203,8 +207,10 @@ label {
 	/*background-color: hsla(360, 100%, 100%, .3);*/
 	background-color: white;
 	margin-bottom: 25px;
+	margin-right: 25px;
 	color: hsl(210, 29%, 29%);
 	max-width: 400px;
+	display: inline-block;
 	/*padding: 15px 0px 5px 15px;*/
 }
 
